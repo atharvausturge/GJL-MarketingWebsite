@@ -4,52 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starter Template</title>
+    <meta name="description"
+        content="Royal Rope is a 2-player castle-climb obby where partners are chained together and win only through coordination.">
+    <title>Royal Rope | Investor Pitch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header class="site-header">
         <div class="container">
-            <h1>Royal Rope</h1>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+            <a href="#top" class="brand">Royal Rope</a>
+            <button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Toggle menu">
+                Menu
+            </button>
+            <nav id="site-nav" class="site-nav">
+                <a href="#game">Game</a>
+                <a href="#mechanics">Mechanics</a>
+                <a href="#invest">Invest</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section class="hero">
-            <h2>Royal Rope</h2>
-            <p>This is a clean starting point you can customize for your project.</p>
-            <button id="cta-button">Get Started</button>
+    <main id="top">
+        <section class="hero container reveal">
+            <p class="eyebrow">P5JS Co-op Obby</p>
+            <h1>Two Royals. One Rope. Zero Solo Wins.</h1>
+            <p class="hero-copy">
+                Royal Rope is a 2-player castle-climb obby where players are chained together. Every jump, pull, and
+                rescue
+                moment is shared. The core fantasy is simple: survive the climb by mastering each other.
+            </p>
+            <div class="hero-actions">
+                <a class="button button-primary" id="cta-button" href="#contact">Request Investor Deck</a>
+                <a class="button button-ghost" href="#mechanics">See Core Mechanics</a>
+            </div>
+            <div class="hero-strip">
+                <article>
+                    <h3>Genre</h3>
+                    <p>Co-op Obby</p>
+                </article>
+                <article>
+                    <h3>Platform Target</h3>
+                    <p>Web + PC Prototype</p>
+                </article>
+                <article>
+                    <h3>Engine</h3>
+                    <p>P5JS</p>
+                </article>
+            </div>
         </section>
 
-        <section class="cards">
-            <article class="card">
-                <h3>Fast Setup</h3>
-                <p>Basic structure, styling, and script included.</p>
-            </article>
-            <article class="card">
-                <h3>Responsive</h3>
-                <p>Layout adapts to mobile and desktop sizes.</p>
-            </article>
-            <article class="card">
-                <h3>Easy to Edit</h3>
-                <p>Replace this content with your own sections.</p>
-            </article>
-        </section>
-    </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 My Website</p>
-        </div>
-    </footer>
 
-    <script src="index.js"></script>
+        <script src="index.js"></script>
 </body>
 
 </html>
