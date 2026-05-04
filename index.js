@@ -9,6 +9,13 @@ if (menuButton && siteNav) {
         menuButton.setAttribute("aria-expanded", String(nextExpanded));
         siteNav.classList.toggle("open", nextExpanded);
     });
+
+    siteNav.addEventListener("click", (event) => {
+        if (event.target instanceof HTMLAnchorElement && window.innerWidth <= 700) {
+            menuButton.setAttribute("aria-expanded", "false");
+            siteNav.classList.remove("open");
+        }
+    });
 }
 
 if (ctaButton) {
