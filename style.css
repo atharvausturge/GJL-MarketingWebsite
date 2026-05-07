@@ -3,15 +3,16 @@
 }
 
 :root {
-    --bg: #0f1a2a;
-    --bg-alt: #16253a;
-    --panel: rgba(255, 255, 255, 0.08);
-    --panel-border: rgba(255, 255, 255, 0.16);
-    --text: #f8f5ec;
-    --muted: #c7cad6;
-    --accent: #ffb000;
-    --accent-deep: #ff7c34;
-    --radius: 18px;
+    --bg: #121316;
+    --bg-alt: #1b1c20;
+    --panel: rgba(34, 32, 28, 0.82);
+    --panel-border: rgba(218, 191, 134, 0.22);
+    --text: #f2e8d8;
+    --muted: #c3b79f;
+    --accent: #d4b36a;
+    --accent-deep: #8f6a2b;
+    --accent-ember: #7f3e24;
+    --radius: 14px;
 }
 
 html {
@@ -20,15 +21,29 @@ html {
 
 body {
     margin: 0;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Cormorant Garamond", serif;
     background:
-        radial-gradient(900px 500px at 15% -10%, rgba(255, 176, 0, 0.2), transparent 70%),
-        radial-gradient(800px 400px at 85% 8%, rgba(255, 124, 52, 0.14), transparent 70%),
-        linear-gradient(175deg, var(--bg), #0b131f 62%, #101b2a);
+        radial-gradient(900px 500px at 18% -10%, rgba(212, 179, 106, 0.16), transparent 70%),
+        radial-gradient(700px 360px at 85% 10%, rgba(127, 62, 36, 0.16), transparent 68%),
+        linear-gradient(175deg, #191a1d, var(--bg) 58%, #0c0d10);
     color: var(--text);
-    line-height: 1.5;
+    line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 92%);
+    opacity: 0.35;
 }
 
 .container {
@@ -40,9 +55,10 @@ body {
     position: sticky;
     top: 0;
     z-index: 20;
-    backdrop-filter: blur(8px);
-    background: rgba(11, 19, 31, 0.72);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    background: rgba(15, 15, 18, 0.9);
+    border-bottom: 1px solid rgba(212, 179, 106, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .site-header .container {
@@ -54,11 +70,12 @@ body {
 }
 
 .brand {
-    font-family: "Archivo Black", sans-serif;
-    letter-spacing: 0.04em;
+    font-family: "Cinzel", serif;
+    letter-spacing: 0.08em;
     color: var(--text);
     text-decoration: none;
     font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
 .site-nav {
@@ -69,10 +86,10 @@ body {
 .site-nav a {
     color: var(--muted);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     font-size: 0.82rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.11em;
 }
 
 .site-nav a:hover,
@@ -82,9 +99,9 @@ body {
 
 .menu-button {
     display: none;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(212, 179, 106, 0.35);
     border-radius: 999px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.03);
     color: var(--text);
     font: inherit;
     padding: 0.5rem 0.9rem;
@@ -105,7 +122,7 @@ main {
     width: 120%;
     left: -10%;
     top: 58%;
-    border-top: 2px dashed rgba(255, 176, 0, 0.7);
+    border-top: 2px solid rgba(212, 179, 106, 0.35);
     transform: rotate(-3deg);
     pointer-events: none;
 }
@@ -125,23 +142,24 @@ main {
 .hero-panel {
     align-self: center;
     margin-top: 2rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    background: linear-gradient(180deg, rgba(52, 47, 40, 0.95), rgba(32, 28, 24, 0.92));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
 }
 
 .panel-kicker {
     text-transform: uppercase;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.14em;
     color: var(--accent);
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 0.6rem;
 }
 
 .eyebrow {
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     color: var(--accent);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.8rem;
     margin-bottom: 0.2rem;
 }
@@ -149,8 +167,8 @@ main {
 h1,
 h2,
 h3 {
-    font-family: "Archivo Black", sans-serif;
-    letter-spacing: 0.01em;
+    font-family: "Cinzel", serif;
+    letter-spacing: 0.03em;
     margin-top: 0;
 }
 
@@ -158,12 +176,14 @@ h3 {
     font-size: clamp(2.2rem, 6vw, 4.4rem);
     margin-bottom: 0.8rem;
     max-width: 12ch;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
 }
 
 .hero-copy {
     max-width: 62ch;
     color: var(--muted);
     font-size: 1.06rem;
+    font-weight: 500;
 }
 
 .hero-actions {
@@ -182,16 +202,19 @@ h3 {
     padding: 0.7rem 1.2rem;
     font-weight: 700;
     border: 1px solid transparent;
+    letter-spacing: 0.04em;
 }
 
 .button-primary {
-    color: #2a1a00;
-    background: linear-gradient(120deg, var(--accent), var(--accent-deep));
+    color: #1b1408;
+    background: linear-gradient(120deg, #e0c57f, var(--accent-deep));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 24px rgba(0, 0, 0, 0.2);
 }
 
 .button-ghost {
     color: var(--text);
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(212, 179, 106, 0.34);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .hero-strip {
@@ -201,10 +224,11 @@ h3 {
 }
 
 .hero-strip article {
-    background: var(--panel);
+    background: linear-gradient(180deg, rgba(44, 40, 35, 0.92), rgba(28, 25, 22, 0.92));
     border: 1px solid var(--panel-border);
     border-radius: var(--radius);
     padding: 0.8rem 1rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .hero-strip h3 {
@@ -228,6 +252,7 @@ h3 {
 .section h2 {
     font-size: clamp(1.5rem, 3.5vw, 2.4rem);
     margin-bottom: 0;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .panel h2 {
@@ -249,14 +274,56 @@ h3 {
 }
 
 .panel {
-    background: var(--panel);
+    background: linear-gradient(180deg, rgba(44, 40, 35, 0.9), rgba(26, 23, 20, 0.95));
     border: 1px solid var(--panel-border);
     border-radius: var(--radius);
     padding: 1.1rem 1.15rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 16px 34px rgba(0, 0, 0, 0.18);
 }
 
 .panel h3 {
     margin-bottom: 0.4rem;
+}
+
+.game-slot-panel {
+    margin-top: 0.95rem;
+}
+
+.game-slot-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: end;
+    margin-bottom: 0.9rem;
+}
+
+.game-slot-note {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.game-slot {
+    min-height: 320px;
+    border-radius: calc(var(--radius) - 4px);
+    border: 1px dashed rgba(212, 179, 106, 0.28);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+        radial-gradient(circle at top left, rgba(212, 179, 106, 0.14), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(127, 62, 36, 0.16), transparent 42%),
+        rgba(10, 10, 12, 0.5);
+    display: grid;
+    place-items: center;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.game-slot p {
+    margin: 0;
+    max-width: 26ch;
+    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 0.01em;
 }
 
 .panel p,
@@ -289,6 +356,7 @@ ul {
 .contact-card {
     text-align: center;
     padding: 2rem 1.2rem;
+    background: linear-gradient(180deg, rgba(50, 45, 39, 0.95), rgba(26, 23, 19, 0.95));
 }
 
 .contact-card .button {
@@ -296,8 +364,8 @@ ul {
 }
 
 .site-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(6, 11, 19, 0.7);
+    border-top: 1px solid rgba(212, 179, 106, 0.18);
+    background: rgba(12, 12, 14, 0.85);
     text-align: center;
     padding: 1.2rem 0 1.6rem;
     margin-top: 2.2rem;
@@ -308,7 +376,7 @@ ul {
 }
 
 .site-footer p {
-    color: #a8afc4;
+    color: #bba889;
     font-size: 0.92rem;
 }
 
@@ -321,6 +389,17 @@ ul {
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 720px) {
+    .game-slot-header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .game-slot {
+        min-height: 240px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -358,6 +437,14 @@ ul {
     .hero::after {
         top: 72%;
         transform: rotate(-6deg);
+    }
+
+    .hero-copy,
+    .panel p,
+    .panel li,
+    .game-slot-note,
+    .site-footer p {
+        font-size: 1rem;
     }
 
     .hero-strip,
